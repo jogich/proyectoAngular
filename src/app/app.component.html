@@ -1,0 +1,39 @@
+<div id="titles" style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <h2> {{ subtitle }} </h2>
+</div>
+<div id="form">
+    <form>
+        <div class="row">
+            <label for="">Nombre: </label>
+            <input type="text" id="name" name="name" placeholder="Nombre..." (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Apellidos: </label>
+            <input type="text" id="surname" name="surname" placeholder="Apellidos..." (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Fecha de nacimiento: </label>
+            <input type="date" id="date" name="date" (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Descripción: </label><br>
+            <textarea name="description" id="description" cols="50" rows="10" (keyup)="datacv(event)"></textarea>
+        </div>
+        <input type="submit" value="Borrar" style="margin-left: 150px;">
+    </form>
+</div>
+
+<hr>
+<div class="w3-card-4 w3-dark-grey" style="margin-left:350px;width:50%;margin-bottom:100px;">
+  <div class="w3-container w3-center">
+    <h3>YOUR CV</h3>
+    <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:80%">
+    <h2>{{ name }} {{ surname }}</h2>
+    <h3>{{ date|date:'shortDate' }}</h3>
+    <h5>Sobre mi</h5><br>
+    <p>{{ description }}</p>
+  </div>
+</div>

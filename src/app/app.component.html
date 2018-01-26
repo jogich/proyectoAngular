@@ -20,9 +20,9 @@
         </div>
         <div class="row">
             <label for="">Descripción: </label><br>
-            <textarea name="description" id="description" cols="50" rows="10" (keyup)="datacv(event)"></textarea>
+            <input type="text" name="description" id="description" (keyup)="datacv($event)">
         </div>
-        <input type="submit" value="Borrar" style="margin-left: 150px;">
+        <button type="reset" value="Borrar" id="delete" (click)="datacv($event)" style="margin-left: 150px;">Borrar</button>
     </form>
 </div>
 
@@ -32,7 +32,7 @@
     <h3>YOUR CV</h3>
     <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:80%">
     <h2>{{ name }} {{ surname }}</h2>
-    <h3>{{ date|date:'shortDate' }}</h3>
+    <h3>{{ date|date:'d-MM-yyyy' }}</h3>
     <h5>Sobre mi</h5><br>
     <p>{{ description }}</p>
   </div>

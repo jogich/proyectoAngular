@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { ButtonDirective } from './button.directive';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonDirective
   ],
   imports: [
     BrowserModule

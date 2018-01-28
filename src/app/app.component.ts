@@ -12,6 +12,10 @@ export class AppComponent {
   surname:string;
   date:string;
   description:string;
+  age:number;
+  error:number;
+
+  people = ['Paco', 'Carlos' , 'Juan', 'Ana'];
 
   datacv(event) {
     var id = event.target.id;
@@ -28,11 +32,20 @@ export class AppComponent {
     else if (id == 'description') {
       this.description = event.target.value;
     }
+    else if (id == 'age') {
+      if (event.target.value < 18){
+        this.error = 1;
+        this.age = event.target.value;
+      } else {
+        this.error = 0;
+      }
+    }
     else if (id == 'delete') {
       this.name = null;
       this.surname = null;
       this.date = null;
       this.description = null;
+      this.age = null;
     }
   }
 }

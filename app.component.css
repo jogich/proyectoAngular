@@ -1,0 +1,11 @@
+.row {
+    margin-top: 15px;
+}
+#form {
+    margin-left: 500px;
+}
+
+#description {
+	width: 500px;
+	height: 200px;
+}

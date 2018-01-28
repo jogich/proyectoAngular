@@ -1,0 +1,59 @@
+<div id="titles" style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <h2> {{ subtitle }} </h2>
+  <p>Gente que ha realizado este formulario:</p>
+  <ul style="list-style:none">
+      <li *ngFor="let boy of people">{{ boy }}</li>
+  </ul>
+</div>
+<style>
+    .error {
+        background-color: red;
+        width: 20%;
+    }
+</style>
+<div id="form">
+    <form>
+        <div class="row">
+            <label for="">Nombre: </label>
+            <input type="text" id="name" name="name" placeholder="Nombre..." (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Apellidos: </label>
+            <input type="text" id="surname" name="surname" placeholder="Apellidos..." (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Fecha de nacimiento: </label>
+            <input type="date" id="date" name="date" (keyup)="datacv($event)">
+        </div>
+        <div class="row">
+            <label for="">Edad: </label>
+            <input type="text" name="description" id="age" (keyup)="datacv($event)"> 
+            <!-- SHOW ERROR -->
+            <div *ngIf="error>0" class="error">
+                <p>Tienes que tener más de 18 años</p>
+            </div>
+            <!-- ERROR -->
+        </div>
+        <div class="row">
+            <label for="">Descripción: </label><br>
+            <input type="text" name="description" id="description" (keyup)="datacv($event)">
+        </div>
+        <button type="reset" value="Borrar" id="delete" (click)="datacv($event)" style="margin-left: 150px;" Button>Borrar</button>
+    </form>
+</div>
+
+<hr>
+<div class="w3-card-4 w3-dark-grey" style="margin-left:350px;width:50%;margin-bottom:100px;">
+  <div class="w3-container w3-center">
+    <h3>YOUR CV</h3>
+    <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" style="width:80%">
+    <h2>{{ name }} {{ surname }}</h2>
+    <h3>{{ date|date:'d-MM-yyyy' }}</h3>
+    <h3>{{ age }}</h3>
+    <h5>Sobre mi</h5><br>
+    <p>{{ description }}</p>
+  </div>
+</div>
